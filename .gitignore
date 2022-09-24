@@ -5,12 +5,17 @@
 /.pnp
 .pnp.js
 
+#lock files
+
 # testing
 /coverage
 
 # production
 /build
 
+./lib
+
+/lib
 # misc
 .DS_Store
 .env.local
@@ -21,3 +26,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignoring storybook build
+/storybook-static
+/build-storybook.log
+yarn.lock
