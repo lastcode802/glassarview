@@ -12,5 +12,14 @@ module.exports = {
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-webpack5"
-  }
+  },
+  webpackFinal: (config) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      sideEffects: true,
+      use: ['css-loader'],
+    });
+
+    return config;
+  },
 }

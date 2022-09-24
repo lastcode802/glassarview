@@ -1,7 +1,27 @@
 {
-  "name": "glassarview",
+  "name": "@lastcode802/glassarview",
   "version": "0.1.0",
-  "private": true,
+  "description": "A custom lib for Glasses Ar View",
+  "author": "lastcode802",
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "react",
+    "typescript",
+    "lastcode",
+    "glassarview",
+    "Augmented Reality",
+    "AR"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lastcode802/glassarview"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -10,19 +30,25 @@
     "@types/node": "^16.11.59",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
+    "jeelizvtowidget": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.8.3",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://lastcode802.github.io/glassarview/",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "react_build": "react-scripts build",
+    "start_publish": "np --yolo --any-branch",
+    "build": "tsc --build ./tsconfig.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "eslintConfig": {
     "extends": [
@@ -64,7 +90,16 @@
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "0.0.13",
     "babel-plugin-named-exports-order": "0.0.2",
+    "gh-pages": "^4.0.0",
+    "np": "^7.6.2",
     "prop-types": "^15.8.1",
     "webpack": "^5.74.0"
+  },
+  "bugs": {
+    "url": "https://github.com/lastcode802/glassarview/issues"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
   }
 }
