@@ -1,12 +1,15 @@
-import React, {useRef, useEffect } from 'react'
+import {useRef, useEffect } from 'react'
 
 import {JEELIZVTOWIDGET } from 'jeelizvtowidget'
 
-// import searchImage from '../../images/target.png'
 import './index.css'
 
 
-function init_VTOWidget(placeHolder: undefined, canvas: undefined, toggleLoading: { (isLoadingVisible: any): void; bind?: any; }){
+export interface GlassArViewProps {
+  modelname: string;
+}
+
+function initWidget(placeHolder: any, canvas: undefined, toggleLoading: { (isLoadingVisible: any): void; bind?: any; }){
   JEELIZVTOWIDGET.start({
     placeHolder,
     canvas,
@@ -51,40 +54,41 @@ function init_VTOWidget(placeHolder: undefined, canvas: undefined, toggleLoading
 }
 
 
-function GlassArView (this: this, props){
-  const refPlaceHolder = useRef();
-  const refCanvas = useRef();
-  const refAdjustEnter = useRef();
-  const refAdjust = useRef();
-  const refChangeModel = useRef();
-  const refLoading = useRef();
+export function GlassArView (this:any , props:GlassArViewProps){
+  const refPlaceHolder = useRef<HTMLDivElement>(null);
+  const refCanvas = useRef<any>();
+  const refAdjustEnter = useRef<any>();
+  const refAdjust = useRef<any>();
+  const refChangeModel = useRef<any>();
+  const refLoading = useRef<any>();
+
 
   const toggleLoading = (isLoadingVisible: any) => {
     refLoading.current.style.display = (isLoadingVisible) ? 'block' : 'none';
   }
 
-  const enter_adjustMode = () => {
+  const StartadjustMode = () => {
     JEELIZVTOWIDGET.enter_adjustMode();
     refAdjustEnter.current.style.display = 'none';
     refAdjust.current.style.display = 'block';
     refChangeModel.current.style.display = 'none';
   }
 
-  const exit_adjustMode = () => {
+  const ExitadjustMode = () => {
     JEELIZVTOWIDGET.exit_adjustMode();
     refAdjustEnter.current.style.display = 'block';
     refAdjust.current.style.display = 'none';
     refChangeModel.current.style.display = 'block';
   }
 
-  const set_glassesModel = (sku: any) => {
+  const SetglassesModel = (sku: any) => {
     JEELIZVTOWIDGET.load(sku);
   }
 
   useEffect(() => {
     const placeHolder = refPlaceHolder.current;
     const canvas = refCanvas.current;
-    init_VTOWidget(placeHolder, canvas, toggleLoading);
+    initWidget(placeHolder, canvas, toggleLoading);
 
     return () => {
       JEELIZVTOWIDGET.destroy();
@@ -96,34 +100,21 @@ function GlassArView (this: this, props){
       <canvas ref={refCanvas} className='JeelizVTOWidgetCanvas'></canvas>
       
       <div ref={refAdjustEnter} className='JeelizVTOWidgetControls'>
-        <button className='JeelizVTOWidgetButton JeelizVTOWidgetAdjustEnterButton' onClick={enter_adjustMode}>
+        <button className='JeelizVTOWidgetButton JeelizVTOWidgetAdjustEnterButton' onClick={StartadjustMode}>
           Adjust
         </button>
       </div>
 
       <div ref={refAdjust} className='JeelizVTOWidgetAdjustNotice'>
         Move the glasses to adjust them.
-        <button className='JeelizVTOWidgetButton JeelizVTOWidgetAdjustExitButton' onClick={exit_adjustMode}>
+        <button className='JeelizVTOWidgetButton JeelizVTOWidgetAdjustExitButton' onClick={ExitadjustMode}>
           Quit
         </button>
       </div>
 
       <div ref={refChangeModel} className='JeelizVTOWidgetControls JeelizVTOWidgetChangeModelContainer'>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_aviator_or_vertFlash')}>Model 1</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_round_cuivre_pinkBrownDegrade')}>Model 2</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'carrera_113S_blue')}>Model 3</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_aviator_or_vert')}>Model 4</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_wayfarer_havane_vert')}>Model 5</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_wayfarer_denimOrange_orangeDegrade')}>Model 6</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_round_gun_vert')}>Model 7</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_aviator_gun_vert')}>Model 8</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_round_cuivre_pinkBrownDegrade')}>Model 9</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_clubround_noir_cuivre_flash')}>Model 10</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_cockpit_or_vert_classique')}>Model 11</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_justin_noir_rougeMirroir')}>Model 12</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_clubround_noir_vertClassique_g15')}>Model 13</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_boyfriend_noir_marron_degrade')}>Model 14</button>
-        <button className='JeelizVTOWidgetButton' onClick={set_glassesModel.bind(this, 'rayban_justin_marron_vertDegrade')}>Model 15</button>
+        <button className='JeelizVTOWidgetButton' onClick={SetglassesModel.bind(this, props.modelname)}>Model 1</button>
+
       </div>
 
       <div ref={refLoading} className='JeelizVTOWidgetLoading'>
@@ -137,3 +128,4 @@ function GlassArView (this: this, props){
 }
 
 export default GlassArView
+
