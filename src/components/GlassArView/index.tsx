@@ -1,4 +1,4 @@
-import {useRef, useEffect } from 'react'
+import {useRef, useEffect, useState } from 'react'
 
 import {JEELIZVTOWIDGET } from 'jeelizvtowidget'
 
@@ -7,6 +7,8 @@ import './index.css'
 
 export interface GlassArViewProps {
   modelname: string;
+  canvaswidth: number;
+  canvasheight: number;
 }
 
 function initWidget(placeHolder: any, canvas: undefined, toggleLoading: { (isLoadingVisible: any): void; bind?: any; }){
@@ -62,6 +64,10 @@ export function GlassArView (this:any , props:GlassArViewProps){
   const refChangeModel = useRef<any>();
   const refLoading = useRef<any>();
 
+  const [ismodalName, SetismodalName] = useState('rayban_aviator_or_vertFlash');
+  const [isheight, Setisheight] = useState(500);
+  const [iswidth, Setwidth] = useState(500);
+
 
   const toggleLoading = (isLoadingVisible: any) => {
     refLoading.current.style.display = (isLoadingVisible) ? 'block' : 'none';
@@ -77,7 +83,7 @@ export function GlassArView (this:any , props:GlassArViewProps){
   const ExitadjustMode = () => {
     JEELIZVTOWIDGET.exit_adjustMode();
     refAdjustEnter.current.style.display = 'block';
-    refAdjust.current.style.display = 'none';
+    refAdjust.current.style.display = 'block';
     refChangeModel.current.style.display = 'block';
   }
 
@@ -95,8 +101,19 @@ export function GlassArView (this:any , props:GlassArViewProps){
     }
   }, []);
 
+ useEffect(() => {
+  SetismodalName(props.modelname);
+ }, [props.modelname]);
+ useEffect(() => {
+  Setisheight(props.canvasheight);
+ }, [props.canvasheight]);
+ useEffect(() => {
+  Setwidth(props.canvaswidth);
+ }, [props.canvaswidth]);
+
+
   return (
-    <div ref={refPlaceHolder} className='JeelizVTOWidget' id="mycondainer">
+    <div ref={refPlaceHolder} className='JeelizVTOWidget' style={{height: isheight, width: iswidth}}>
       <canvas ref={refCanvas} className='JeelizVTOWidgetCanvas'></canvas>
       
       <div ref={refAdjustEnter} className='JeelizVTOWidgetControls'>
@@ -113,7 +130,7 @@ export function GlassArView (this:any , props:GlassArViewProps){
       </div>
 
       <div ref={refChangeModel} className='JeelizVTOWidgetControls JeelizVTOWidgetChangeModelContainer'>
-        <button className='JeelizVTOWidgetButton' onClick={SetglassesModel.bind(this, props.modelname)}>Model 1</button>
+        <button className='JeelizVTOWidgetButton' onClick={SetglassesModel.bind(this, ismodalName)}>Model 1</button>
 
       </div>
 

@@ -3,7 +3,7 @@ import React from 'react';
 import GlassArView, {GlassArViewProps} from '../../components/GlassArView';
 
 export default {
-	title: '3DmodelExample/ThreedView',
+	title: 'ARmodelExample/GlassArView',
 	component: GlassArView,
 } as Meta;
 
@@ -14,5 +14,7 @@ const Template: Story<GlassArViewProps> = (args: GlassArViewProps) => (
 );
 export const Default = Template.bind({});
 Default.args = {
-modelname: 'rayban_aviator_or_vertFlash'
+modelname: 'rayban_aviator_or_vertFlash',
+canvaswidth: 500,
+canvasheight: 500,
 };
