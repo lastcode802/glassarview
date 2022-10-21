@@ -17,7 +17,7 @@
     box-sizing: border-box;
   }
   
-  button, select {
+  /* button, select {
     cursor: pointer;
     background: rgba(0, 0, 0, 0.5);
     color: #ddd;
@@ -34,7 +34,7 @@
   button:hover {
     background: rgba(0, 0, 0, 0.8);
     color: white;
-  }
+  } */
   
   .content{
     /*height: 100vh;*/
@@ -82,9 +82,12 @@
   }
   
   .JeelizVTOWidgetControls {
-    position: absolute;
+    /* position: absolute; */
     z-index: 2;
     width: 100%;
+  }
+  .JeelizVTOWidgetButtonContainer {
+    display: flex;
   }
   .buttonIcon {
     display: inline-block;
@@ -95,6 +98,13 @@
     top: 16px;
     height: 40px;
   }
+  .JeelizVTOWidgetAdjustNoticeContainer {
+    width: 100%;
+  }
+.JeelizVTOWidgetAdjustNoticeContainer .JeelizVTOWidgetAdjustNotice {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
   .JeelizVTOWidgetControlsTop > button {
      width: 45%;
      min-width: auto;

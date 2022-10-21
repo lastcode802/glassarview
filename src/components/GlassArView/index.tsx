@@ -1,17 +1,20 @@
-import {useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
-import {JEELIZVTOWIDGET } from 'jeelizvtowidget'
+import { JEELIZVTOWIDGET } from 'jeelizvtowidget'
 
 import './index.css'
+import ControlButton from '../ControlButton';
 
 
 export interface GlassArViewProps {
   modelname: string;
   canvaswidth: number;
   canvasheight: number;
+  buttonBackgroundColor?: string;
+  buttonFontColor?: string;
 }
 
-function initWidget(placeHolder: any, canvas: undefined, toggleLoading: { (isLoadingVisible: any): void; bind?: any; }){
+function initWidget(placeHolder: any, canvas: undefined, toggleLoading: { (isLoadingVisible: any): void; bind?: any; }) {
   JEELIZVTOWIDGET.start({
     placeHolder,
     canvas,
@@ -26,12 +29,12 @@ function initWidget(placeHolder: any, canvas: undefined, toggleLoading: { (isLoa
     // searchImageMask: searchImage, //'https://appstatic.jeeliz.com/jeewidget/images/target.png',
     // searchImageColor: 0xeeeeee, // color of loading (face not found) animation
     // searchImageRotationSpeed: -0.001, // negative -> clockwise
-    callbackReady: function(){
+    callbackReady: function () {
       console.log('INFO: JEELIZVTOWIDGET is ready :)');
     },
-    onError: function(errorLabel: string){ // this function catches errors, so you can display custom integrated messages
+    onError: function (errorLabel: string) { // this function catches errors, so you can display custom integrated messages
       alert('An error happened. errorLabel =' + errorLabel)
-      switch(errorLabel) {
+      switch (errorLabel) {
         case 'WEBCAM_UNAVAILABLE':
           // the user has no camera, or does not want to share it.
           break;
@@ -45,7 +48,7 @@ function initWidget(placeHolder: any, canvas: undefined, toggleLoading: { (isLoa
           // Something is wrong with the placeholder
           // (element whose id='JeelizVTOWidget')
           break;
-          
+
         case 'FATAL':
         default:
           // a bit error happens:(
@@ -56,17 +59,15 @@ function initWidget(placeHolder: any, canvas: undefined, toggleLoading: { (isLoa
 }
 
 
-export function GlassArView (this:any , props:GlassArViewProps){
+export function GlassArView(this: any, props: GlassArViewProps) {
   const refPlaceHolder = useRef<HTMLDivElement>(null);
   const refCanvas = useRef<any>();
-  const refAdjustEnter = useRef<any>();
-  const refAdjust = useRef<any>();
-  const refChangeModel = useRef<any>();
   const refLoading = useRef<any>();
 
   const [ismodalName, SetismodalName] = useState('rayban_aviator_or_vertFlash');
   const [isheight, Setisheight] = useState(500);
   const [iswidth, Setwidth] = useState(500);
+  const [adjustMode, setAdjustMode] = useState(false);
 
 
   const toggleLoading = (isLoadingVisible: any) => {
@@ -75,16 +76,12 @@ export function GlassArView (this:any , props:GlassArViewProps){
 
   const StartadjustMode = () => {
     JEELIZVTOWIDGET.enter_adjustMode();
-    refAdjustEnter.current.style.display = 'none';
-    refAdjust.current.style.display = 'block';
-    refChangeModel.current.style.display = 'none';
+    setAdjustMode(true);
   }
 
   const ExitadjustMode = () => {
     JEELIZVTOWIDGET.exit_adjustMode();
-    refAdjustEnter.current.style.display = 'block';
-    refAdjust.current.style.display = 'block';
-    refChangeModel.current.style.display = 'block';
+    setAdjustMode(false);
   }
 
   const SetglassesModel = (sku: any) => {
@@ -101,41 +98,57 @@ export function GlassArView (this:any , props:GlassArViewProps){
     }
   }, []);
 
- useEffect(() => {
-  SetismodalName(props.modelname);
- }, [props.modelname]);
- useEffect(() => {
-  Setisheight(props.canvasheight);
- }, [props.canvasheight]);
- useEffect(() => {
-  Setwidth(props.canvaswidth);
- }, [props.canvaswidth]);
+  useEffect(() => {
+    SetismodalName(props.modelname);
+  }, [props.modelname]);
+  useEffect(() => {
+    Setisheight(props.canvasheight);
+  }, [props.canvasheight]);
+  useEffect(() => {
+    Setwidth(props.canvaswidth);
+  }, [props.canvaswidth]);
 
+  const {
+    buttonBackgroundColor,
+    buttonFontColor,
+  } = props;
 
   return (
-    <div ref={refPlaceHolder} className='JeelizVTOWidget' style={{height: isheight, width: iswidth}}>
+    <div ref={refPlaceHolder} className='JeelizVTOWidget' style={{ height: isheight, width: iswidth }}>
       <canvas ref={refCanvas} className='JeelizVTOWidgetCanvas'></canvas>
-      
-      <div ref={refAdjustEnter} className='JeelizVTOWidgetControls'>
-        <button className='JeelizVTOWidgetButton JeelizVTOWidgetAdjustEnterButton' onClick={StartadjustMode}>
-          Adjust
-        </button>
-      </div>
-
-      <div ref={refAdjust} className='JeelizVTOWidgetAdjustNotice'>
-        Move the glasses to adjust them.
-        <button className='JeelizVTOWidgetButton JeelizVTOWidgetAdjustExitButton' onClick={ExitadjustMode}>
-          Quit
-        </button>
-      </div>
-
-      <div ref={refChangeModel} className='JeelizVTOWidgetControls JeelizVTOWidgetChangeModelContainer'>
-        <button className='JeelizVTOWidgetButton' onClick={SetglassesModel.bind(this, ismodalName)}>Model 1</button>
-
+      <div className='JeelizVTOWidgetButtonContainer'>
+        {
+          adjustMode && (
+            <div className='JeelizVTOWidgetAdjustNoticeContainer' >
+              <div className='JeelizVTOWidgetAdjustNotice'>
+                Move the glasses to adjust them.
+              </div>
+              <div className='JeelizVTOWidgetControls'>
+                <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={ExitadjustMode}>
+                  Quit
+                </ControlButton>
+              </div>
+            </div>
+          )
+        }
+        {
+          !adjustMode && (
+            <>
+            <div className='JeelizVTOWidgetControls'>
+              <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={StartadjustMode}>
+                Adjust
+              </ControlButton>
+            </div>
+             <div className='JeelizVTOWidgetControls JeelizVTOWidgetChangeModelContainer'>
+             <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={SetglassesModel.bind(this, ismodalName)}>Model 1</ControlButton>
+           </div>
+            </>
+          )
+        }
       </div>
 
       <div ref={refLoading} className='JeelizVTOWidgetLoading'>
-       <div className='JeelizVTOWidgetLoadingText'>
+        <div className='JeelizVTOWidgetLoadingText'>
           LOADING...
         </div>
       </div>

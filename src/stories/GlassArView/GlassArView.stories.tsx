@@ -17,4 +17,6 @@ Default.args = {
 modelname: 'rayban_aviator_or_vertFlash',
 canvaswidth: 500,
 canvasheight: 500,
+buttonFontColor: 'white',
+buttonBackgroundColor: 'yellow'
 };
