@@ -1,3 +1,10 @@
+<p align="center">
+  <img width="150" src="https://res.cloudinary.com/lastshop802/image/upload/v1662288637/logoSheroz_w9anft.png" alt="MUI logo">
+</p>
+
+<h1 align="center">lastcode802</h1>
+  <img src="https://res.cloudinary.com/lastshop802/image/upload/v1667208786/ezgif.com-gif-maker_4_or7eb9.gif" alt="MUI logo">
+
 # Glasses Virtual Try-on Widget
 
 
@@ -11,9 +18,7 @@ You can find more information in [Find & contact me](#Find-&-contact-me).
 
 * [Features](#features)
 * [Demonstrations](#demonstrations)
-  * [Included in this repository](#included-in-this-repository)
   * [Demo app](#demo-app)
-  * [They trust us](#they-trust-us)
 * [Glasses 3D models](#glasses-3d-models)
   * [From GlassesDB](#from-glassesdb)
   * [As a static file](#as-a-static-file)
@@ -45,7 +50,7 @@ You can find more information in [Find & contact me](#Find-&-contact-me).
 
 ### Demo app
 
-* [Jeeliz sunglasses web application (not included in this repository)](https://jeeliz.com/sunglasses)
+* [Storybook View](https://lastcode802.github.io/glassarview/)
 
 
 ## Glasses 3D models
