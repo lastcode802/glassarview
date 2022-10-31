@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-interface Props {
+export interface GlassArBtnProps {
     backgroundColor?: string;
     color?: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -8,7 +8,7 @@ interface Props {
     children?: React.ReactNode;
 }
 
-const ControlButton: React.FC<Props>  = (props) => {
+const ControlButton: React.FC<GlassArBtnProps>  = (props) => {
     const { onClick, className, children, backgroundColor, color } = props;
   return (
     <button
