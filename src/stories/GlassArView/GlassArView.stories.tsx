@@ -18,7 +18,8 @@ modelname: 'rayban_aviator_or_vertFlash',
 canvaswidth: 500,
 canvasheight: 500,
 buttonFontColor: 'white',
-buttonBackgroundColor: 'yellow'
+// buttonBackgroundColor: 'yellow'
+buttonBackgroundColor: '#FFE5B4'
 };
 export const buttonColor = Template.bind({});
 buttonColor.args = {
