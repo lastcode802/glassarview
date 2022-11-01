@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">lastcode802</h1>
-  <img align="center" src="https://res.cloudinary.com/lastshop802/image/upload/v1667208786/ezgif.com-gif-maker_4_or7eb9.gif" alt="MUI logo">
+  <img width="150" align="center" src="https://res.cloudinary.com/lastshop802/image/upload/v1667208786/ezgif.com-gif-maker_4_or7eb9.gif" alt="MUI logo">
 
 # Glasses Virtual Try-on Widget
 
