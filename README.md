@@ -13,7 +13,7 @@
 
 Offer glasses virtual try-on to your users with this JavaScript widget. It can be easily integrated into an e-commerce website or into a mobile web application with a few lines of code. The experience is in real-time: the user see his face like in a mirror, but with glasses on.
 
-You can find more information in [Find & contact me](#Find-&-contact-me).
+You can find more information in [Find & contact me](#contact-me).
 
 
 ## Table of contents
@@ -155,6 +155,6 @@ Where `intervalMs` is the interval in milliseconds between 2 rendering loops.
 This widget access the user's camera video stream through `MediaStream API`. So your application should be hosted by a HTTPS server (even with a self-signed certificate). It won't work at all with unsecure HTTP, even locally with some web browsers.
 
 
-# Find & contact me
+# contact me
 <p><a href="https://www.linkedin.com/company/lastcode/"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <a href="mailto:lastcode802@gmail.com"><img alt="Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a> <a href="https://www.facebook.com/profile.php?id=100067627036290"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /></a> <a href="https://www.instagram.com/lastcode802/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=Instagram&logoColor=white" /></a> <a href="https://www.youtube.com/channel/UCZfZm4thtZt0drL1j7PKb4w" target="_blank"><img alt="Discord" src="https://img.shields.io/badge/Youtube-FF0000.svg?&style=for-the-badge&logo=Youtube&logoColor=white" /></a>  <a href="https://chat.whatsapp.com/HDazjAi7if29K9FaRcCy5Y"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a> <a href="https://discord.gg/gZfequNfyW" target="_blank"><img alt="Discord" src="https://img.shields.io/badge/Discord-5869e9.svg?&style=for-the-badge&logo=Discord&logoColor=white" /></a> <a href="https://github.com/orgs/lastcode802/repositories" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a>
 </p>
