@@ -43,12 +43,23 @@
     "react_build": "react-scripts build",
     "start_publish": "np --yolo --any-branch",
     "build": "tsc --build ./tsconfig.json",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage ./src",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(spacetime)/)",
+      "node_modules/(?!foo/)",
+      "node_modules/(?!bar/)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/stories/"
+    ]
   },
   "eslintConfig": {
     "extends": [

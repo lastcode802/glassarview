@@ -3,8 +3,10 @@
 </p>
 
 <h1 align="center">lastcode802</h1>
+<p align="center">
   <img src="https://res.cloudinary.com/lastshop802/image/upload/v1667208786/ezgif.com-gif-maker_4_or7eb9.gif" alt="MUI logo">
-  
+</p>
+
 # Glasses Virtual Try-on Widget
 
 

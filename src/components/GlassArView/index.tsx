@@ -140,7 +140,7 @@ export function GlassArView(this: any, props: GlassArViewProps) {
               </ControlButton>
             </div>
              <div className='JeelizVTOWidgetControls JeelizVTOWidgetChangeModelContainer'>
-             <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={SetglassesModel.bind(this, ismodalName)}>Model 1</ControlButton>
+             <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={SetglassesModel.bind(this, ismodalName)}>Model </ControlButton>
            </div>
             </>
           )
