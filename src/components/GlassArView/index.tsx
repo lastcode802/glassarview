@@ -114,45 +114,47 @@ export function GlassArView(this: any, props: GlassArViewProps) {
   } = props;
 
   return (
-    <div ref={refPlaceHolder} className='JeelizVTOWidget' style={{ height: isheight, width: iswidth }}>
-      <canvas ref={refCanvas} className='JeelizVTOWidgetCanvas'></canvas>
-      <div className='JeelizVTOWidgetButtonContainer'>
-        {
-          adjustMode && (
-            <div className='JeelizVTOWidgetAdjustNoticeContainer' >
-              <div className='JeelizVTOWidgetAdjustNotice'>
-                Move the glasses to adjust them.
+    <div className='JeelizVTOWidgetContainer' >
+      <div ref={refPlaceHolder} className='JeelizVTOWidget' style={{ height: isheight, width: iswidth }}>
+        <canvas ref={refCanvas} className='JeelizVTOWidgetCanvas'></canvas>
+        <div className='JeelizVTOWidgetButtonContainer'>
+          {
+            adjustMode && (
+              <div className='JeelizVTOWidgetAdjustNoticeContainer' >
+                <div className='JeelizVTOWidgetAdjustNotice'>
+                  Move the glasses to adjust them.
+                </div>
+                <div className='JeelizVTOWidgetControls'>
+                  <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={ExitadjustMode}>
+                    Quit
+                  </ControlButton>
+                </div>
               </div>
-              <div className='JeelizVTOWidgetControls'>
-                <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={ExitadjustMode}>
-                  Quit
-                </ControlButton>
-              </div>
-            </div>
-          )
-        }
-        {
-          !adjustMode && (
-            <>
-            <div className='JeelizVTOWidgetControls'>
-              <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={StartadjustMode}>
-                Adjust
-              </ControlButton>
-            </div>
-             <div className='JeelizVTOWidgetControls JeelizVTOWidgetChangeModelContainer'>
-             <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={SetglassesModel.bind(this, ismodalName)}>Model </ControlButton>
-           </div>
-            </>
-          )
-        }
-      </div>
-
-      <div ref={refLoading} className='JeelizVTOWidgetLoading'>
-        <div className='JeelizVTOWidgetLoadingText'>
-          LOADING...
+            )
+          }
+          {
+            !adjustMode && (
+              <>
+                <div className='JeelizVTOWidgetControls'>
+                  <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={StartadjustMode}>
+                    Adjust
+                  </ControlButton>
+                </div>
+                <div className='JeelizVTOWidgetControls JeelizVTOWidgetChangeModelContainer'>
+                  <ControlButton color={buttonFontColor} backgroundColor={buttonBackgroundColor} onClick={SetglassesModel.bind(this, ismodalName)}>Model </ControlButton>
+                </div>
+              </>
+            )
+          }
         </div>
-      </div>
 
+        <div ref={refLoading} className='JeelizVTOWidgetLoading'>
+          <div className='JeelizVTOWidgetLoadingText'>
+            LOADING...
+          </div>
+        </div>
+
+      </div>
     </div>
   )
 }
