@@ -21,6 +21,8 @@ You can find more information in [Find & contact me](#contact-me).
 * [Features](#features)
 * [Demonstrations](#demonstrations)
   * [Demo app](#demo-app)
+  * [Code](#Code)
+  * [Props](#props)
 * [Glasses 3D models](#glasses-3d-models)
   * [From GlassesDB](#from-glassesdb)
   * [As a static file](#as-a-static-file)
@@ -87,11 +89,11 @@ However, the capabilities of *Glasses Studio 3D* are below what we offer with *G
 | Hosting |  | X |
 
 
-## Props
+# props
 			
 |     prop      |      type     |     default   |   example     |
 | ------------- | ------------- | ------------- | ------------- |
-|  modelname*  | string  | rayban_aviator_or_vertFlash  | This is the default model name you can set name of you choce  
+|  modelname*  | string  | rayban_aviator_or_vertFlash  | This is the default model name you can set name of you choose to check glassdb 
 | canvaswidth*   | number  | 1-(screen size)  | you can set any width as per your setting
 |  canvasheight*  | number  |1-(screen size) | you can set height as per your setting
 | buttonFontColor  | color  |  white-(any color) | you can set any color of button fonts
@@ -169,9 +171,9 @@ This widget access the user's camera video stream through `MediaStream API`. So 
 ## Special Mentions for Contributors
 
 <!-- readme: contributors -start -->
-<table>
+<table style="margin-left: auto; margin-right: auto; overflow-y:hidden;">
 <tr>
-    <td align="center">
+    <td>
         <a href="https://github.com/sharozraees802">
             <img src="https://avatars.githubusercontent.com/u/52934734?v=4" width="100;" alt="aumohsin99"/>
             <br />
