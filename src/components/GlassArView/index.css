@@ -95,6 +95,10 @@
   }
   .JeelizVTOWidgetContainer {
     width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .buttonIcon {
     display: inline-block;
