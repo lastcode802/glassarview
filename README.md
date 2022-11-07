@@ -171,12 +171,12 @@ This widget access the user's camera video stream through `MediaStream API`. So 
 ## Special Mentions for Contributors
 
 <!-- readme: contributors -start -->
-<div style="margin: 0 auto; overflow-y:hidden;">
-<table style="overflow-y:hidden;">
+<div style="margin: 0 auto !important; overflow-y:hidden !important;">
+<table style="overflow-y:hidden !important;">
 <tr>
     <td>
         <a href="https://github.com/sharozraees802">
-            <img src="https://avatars.githubusercontent.com/u/52934734?v=4" width="200;" alt="sharozraees802"/>
+            <img src="https://avatars.githubusercontent.com/u/52934734?v=4" width="150;" alt="sharozraees802"/>
             <br />
             <sub><b>Sharoz Raees</b></sub>
         </a>
@@ -184,14 +184,14 @@ This widget access the user's camera video stream through `MediaStream API`. So 
     <td>
         <a href="https://github.com/Sahilnenwani">
             <img src="https://avatars.githubusercontent.com/u/59645201?s=400&u=f7a0e3a42e91410494c2cbbfb9d674dcbe291660&v=4"
-            width="200;" alt="SahilNenwani"/>
+            width="150;" alt="SahilNenwani"/>
             <br />
             <sub><b>Sahil Nenwani</b></sub>
         </a>
     </td>
     <td>
         <a href="https://github.com/nadirdeveloper">
-            <img src="https://avatars.githubusercontent.com/u/63139854?v=4" width="200;" alt="NadirAli"/>
+            <img src="https://avatars.githubusercontent.com/u/63139854?v=4" width="150;" alt="NadirAli"/>
             <br />
             <sub><b>Nadir Ali</b></sub>
         </a>
