@@ -1,6 +1,6 @@
 {
   "name": "@lastcode802/glassarview",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A custom lib for Glasses Ar View",
   "author": "lastcode802",
   "main": "./lib/index.js",
