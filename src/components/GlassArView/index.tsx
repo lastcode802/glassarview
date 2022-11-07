@@ -117,7 +117,16 @@ export function GlassArView(this: any, props: GlassArViewProps) {
     <div className='JeelizVTOWidgetContainer' >
       <div ref={refPlaceHolder} className='JeelizVTOWidget' style={{ height: isheight, width: iswidth }}>
         <canvas ref={refCanvas} className='JeelizVTOWidgetCanvas'></canvas>
-        <div className='JeelizVTOWidgetButtonContainer'>
+       
+
+        <div ref={refLoading} className='JeelizVTOWidgetLoading'>
+          <div className='JeelizVTOWidgetLoadingText'>
+            LOADING...
+          </div>
+        </div>
+
+      </div>
+      <div className='JeelizVTOWidgetButtonContainer'>
           {
             adjustMode && (
               <div className='JeelizVTOWidgetAdjustNoticeContainer' >
@@ -147,14 +156,6 @@ export function GlassArView(this: any, props: GlassArViewProps) {
             )
           }
         </div>
-
-        <div ref={refLoading} className='JeelizVTOWidgetLoading'>
-          <div className='JeelizVTOWidgetLoadingText'>
-            LOADING...
-          </div>
-        </div>
-
-      </div>
     </div>
   )
 }
