@@ -87,6 +87,18 @@ However, the capabilities of *Glasses Studio 3D* are below what we offer with *G
 | Hosting |  | X |
 
 
+## Props
+			
+|     prop      |      type     |     default   |   example     |
+| ------------- | ------------- | ------------- | ------------- |
+|  modelname*  | string  | rayban_aviator_or_vertFlash  | This is the default model name you can set name of you choce  
+| canvaswidth*   | number  | 1-(screen size)  | you can set any width as per your setting
+|  canvasheight*  | number  |1-(screen size) | you can set height as per your setting
+| buttonFontColor  | color  |  white-(any color) | you can set any color of button fonts
+|  buttonBackgroundColor | color  |#FFE5B4-(any color)  | you can set any color of button background
+
+
+<hr></hr>
 
 
 
@@ -154,6 +166,34 @@ Where `intervalMs` is the interval in milliseconds between 2 rendering loops.
 
 This widget access the user's camera video stream through `MediaStream API`. So your application should be hosted by a HTTPS server (even with a self-signed certificate). It won't work at all with unsecure HTTP, even locally with some web browsers.
 
+## Special Mentions for Contributors
+
+<!-- readme: contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/sharozraees802">
+            <img src="https://avatars.githubusercontent.com/u/52934734?v=4" width="100;" alt="aumohsin99"/>
+            <br />
+            <sub><b>Sharoz Raees</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Sahilnenwani">
+            <img src="https://avatars.githubusercontent.com/u/59645201?s=400&u=f7a0e3a42e91410494c2cbbfb9d674dcbe291660&v=4" width="100;" alt="samiullahsaleem"/>
+            <br />
+            <sub><b>Sahil Nenwani</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/nadirdeveloper">
+            <img src="https://avatars.githubusercontent.com/u/63139854?v=4" width="100;" alt="shatterstar13"/>
+            <br />
+            <sub><b>Nadir Ali</b></sub>
+        </a>
+    </td>
+    <tr>
+    </table>
 
 # contact me
 <p><a href="https://www.linkedin.com/company/lastcode/"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <a href="mailto:lastcode802@gmail.com"><img alt="Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a> <a href="https://www.facebook.com/profile.php?id=100067627036290"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /></a> <a href="https://www.instagram.com/lastcode802/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=Instagram&logoColor=white" /></a> <a href="https://www.youtube.com/channel/UCZfZm4thtZt0drL1j7PKb4w" target="_blank"><img alt="Discord" src="https://img.shields.io/badge/Youtube-FF0000.svg?&style=for-the-badge&logo=Youtube&logoColor=white" /></a>  <a href="https://chat.whatsapp.com/HDazjAi7if29K9FaRcCy5Y"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a> <a href="https://discord.gg/gZfequNfyW" target="_blank"><img alt="Discord" src="https://img.shields.io/badge/Discord-5869e9.svg?&style=for-the-badge&logo=Discord&logoColor=white" /></a> <a href="https://github.com/orgs/lastcode802/repositories" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a>
