@@ -4,7 +4,7 @@
 
 <h1 align="center">lastcode802</h1>
 <p align="center">
-  <img src="https://res.cloudinary.com/lastshop802/image/upload/v1667208786/ezgif.com-gif-maker_4_or7eb9.gif" alt="MUI logo">
+  <img src="https://res.cloudinary.com/lastshop802/image/upload/v1667798645/glassar_ozycvr.gif" alt="MUI logo">
 </p>
 
 # Glasses Virtual Try-on Widget
@@ -21,7 +21,7 @@ You can find more information in [Find & contact me](#contact-me).
 * [Features](#features)
 * [Demonstrations](#demonstrations)
   * [Demo app](#demo-app)
-  * [Code](#Code)
+  * [Available Code](#available-code)
   * [Props](#props)
 * [Glasses 3D models](#glasses-3d-models)
   * [From GlassesDB](#from-glassesdb)
@@ -87,6 +87,41 @@ However, the capabilities of *Glasses Studio 3D* are below what we offer with *G
 | 3D model compression |  | X |
 | Guaranteed support |  | X |
 | Hosting |  | X |
+
+#
+## Available Code
+
+```jsx
+import * as React from 'react';
+import { ThreedView } from "@lastcode802/threedview";
+
+function App() {
+  return (
+    <ThreedView
+      model3dmtl="./assets/IronMan/IronMan.mtl"
+      model3dobj="./assets/IronMan/IronMan.obj"
+      near={0.1}
+      positionx3d={0}
+      positiony3d={5}
+      positionz3d={20}
+      meshpositionx={0}
+      meshpositiony={3}
+      meshpositionz={0}
+      rotationx={0.0}
+      rotationy={0.01}
+      rotationz={0.0}
+      scalex={0.02}
+      scaley={0.02}
+      scalez={0.02}
+      threedviewcanvascolor="#263238"
+      directionallightcolor={0xffffff}
+      directionallightintensity={1.8}
+    />
+  );
+}
+
+export default App;
+```
 
 
 # props
@@ -178,7 +213,7 @@ This widget access the user's camera video stream through `MediaStream API`. So 
         <a href="https://github.com/sharozraees802">
             <img src="https://avatars.githubusercontent.com/u/52934734?v=4" width="150;" alt="sharozraees802"/>
             <br />
-            <sub><b>Sharoz Raees</b></sub>
+            <sub><b>Creator: Sharoz Raees</b></sub>
         </a>
     </td>
     <td>
@@ -186,14 +221,14 @@ This widget access the user's camera video stream through `MediaStream API`. So 
             <img src="https://avatars.githubusercontent.com/u/59645201?s=400&u=f7a0e3a42e91410494c2cbbfb9d674dcbe291660&v=4"
             width="150;" alt="SahilNenwani"/>
             <br />
-            <sub><b>Sahil Nenwani</b></sub>
+            <sub><b>Maintainer: Sahil Nenwani</b></sub>
         </a>
     </td>
     <td>
         <a href="https://github.com/nadirdeveloper">
             <img src="https://avatars.githubusercontent.com/u/63139854?v=4" width="150;" alt="NadirAli"/>
             <br />
-            <sub><b>Nadir Ali</b></sub>
+            <sub><b>Maintainer: Nadir Ali</b></sub>
         </a>
     </td>
     <tr>
