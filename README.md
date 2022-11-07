@@ -93,36 +93,40 @@ However, the capabilities of *Glasses Studio 3D* are below what we offer with *G
 
 ```jsx
 import * as React from 'react';
-import { ThreedView } from "@lastcode802/threedview";
+import { GlassArView } from "@lastcode802/glassarview";
 
 function App() {
   return (
-    <ThreedView
-      model3dmtl="./assets/IronMan/IronMan.mtl"
-      model3dobj="./assets/IronMan/IronMan.obj"
-      near={0.1}
-      positionx3d={0}
-      positiony3d={5}
-      positionz3d={20}
-      meshpositionx={0}
-      meshpositiony={3}
-      meshpositionz={0}
-      rotationx={0.0}
-      rotationy={0.01}
-      rotationz={0.0}
-      scalex={0.02}
-      scaley={0.02}
-      scalez={0.02}
-      threedviewcanvascolor="#263238"
-      directionallightcolor={0xffffff}
-      directionallightintensity={1.8}
+    <GlassArView
+      modelname="rayban_aviator_or_vertFlash"
+      canvasheight={500}
+      canvaswidth={500}
     />
   );
 }
 
 export default App;
 ```
+<p> Or </p>
 
+```jsx
+import * as React from 'react';
+import { GlassArView } from "@lastcode802/glassarview";
+
+function App() {
+  return (
+    <GlassArView
+      modelname="rayban_aviator_or_vertFlash"
+      canvasheight={500}
+      canvaswidth={500}
+      buttonBackgroundColor="#FFE5B4"
+      buttonFontColor="white"
+    />
+  );
+}
+
+export default App;
+```
 
 # props
 			

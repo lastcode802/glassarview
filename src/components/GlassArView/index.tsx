@@ -60,7 +60,7 @@ function initWidget(placeHolder: any, canvas: undefined, toggleLoading: { (isLoa
 
 
 export function GlassArView(this: any, props: GlassArViewProps) {
-  const refPlaceHolder = useRef<HTMLDivElement>(null);
+  const refPlaceHolder = useRef<any>();
   const refCanvas = useRef<any>();
   const refLoading = useRef<any>();
 
